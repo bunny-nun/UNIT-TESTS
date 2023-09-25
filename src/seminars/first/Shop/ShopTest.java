@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class ShopTest {
 
@@ -28,9 +28,7 @@ public class ShopTest {
         assertThat(shop.getProducts()).isNotEmpty().hasSize(3).contains(water, grape, cheese);
 
         for (Product product : shop.getProducts()) {
-            if (!product.equals(shop.getMostExpensiveProduct())) {
-                assertThat(product.getCost()).isLessThanOrEqualTo(shop.getMostExpensiveProduct().getCost());
-            }
+            assertThat(product.getCost()).isLessThanOrEqualTo(shop.getMostExpensiveProduct().getCost());
         }
 
         List<Product> sortedList = shop.sortProductsByPrice();

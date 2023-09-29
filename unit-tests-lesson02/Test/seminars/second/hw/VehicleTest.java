@@ -104,8 +104,4 @@ class VehicleTest {
         //assert
         assertEquals(motorcycle.getSpeed(), 0);
     }
-
-
-
-
 }

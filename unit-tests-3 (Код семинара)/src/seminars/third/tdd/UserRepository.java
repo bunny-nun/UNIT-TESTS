@@ -13,6 +13,14 @@ public class UserRepository {
             data.add(user);
         }
     }
+
+    public void massLogOut() {
+        for (User user : this.data) {
+            if (!user.isAdmin) {
+                user.isAuthenticate = false;
+            }
+        }
+    }
 //
 //    public boolean findByName(String username) {
 //        for (User user : data) {

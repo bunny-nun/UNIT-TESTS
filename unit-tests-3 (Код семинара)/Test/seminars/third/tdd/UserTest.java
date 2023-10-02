@@ -9,11 +9,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class UserTest {
     User user;
     User admin;
+    UserRepository repository;
 
     @BeforeEach
     public void setUp() {
         user = new User("user", "qwerty");
         admin = new User("admin", "qwerty123", true);
+        repository = new UserRepository();
     }
 
     @Test
@@ -33,7 +35,6 @@ public class UserTest {
 
     @Test
     public void addAuthenticatedUser() {
-        UserRepository repository = new UserRepository();
         user.authenticate("user", "qwerty");
         repository.addUser(user);
         assertTrue(repository.data.contains(user));
@@ -41,7 +42,6 @@ public class UserTest {
 
     @Test
     public void addWrongAuthenticatedUser() {
-        UserRepository repository = new UserRepository();
         user.authenticate("user1", "qwerty");
         repository.addUser(user);
         assertFalse(repository.data.contains(user));
@@ -49,8 +49,26 @@ public class UserTest {
 
     @Test
     public void addNotAuthenticatedUser() {
-        UserRepository repository = new UserRepository();
         repository.addUser(user);
         assertFalse(repository.data.contains(user));
     }
+
+    @Test
+    public void NotAdminLogoutTest() {
+        user.authenticate("user", "qwerty");
+        repository.addUser(user);
+        repository.massLogOut();
+        assertFalse(user.isAuthenticate);
+
+    }
+
+    @Test
+    public void AdminLogoutTest() {
+        admin.authenticate("admin", "qwerty123");
+        repository.addUser(admin);
+        repository.massLogOut();
+        assertTrue(admin.isAuthenticate);
+    }
+
+
 }

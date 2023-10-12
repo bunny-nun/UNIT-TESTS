@@ -22,3 +22,6 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 *.xml
+/libs/selenium-java-4.11.0/LICENSE
+/libs/selenium-java-4.11.0/NOTICE
+/libs/selenium-java-4.11.0/CHANGELOG

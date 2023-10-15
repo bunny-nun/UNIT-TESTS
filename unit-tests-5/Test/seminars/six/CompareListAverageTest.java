@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EmptySource;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -88,6 +90,18 @@ class CompareListAverageTest {
         double result = listAverage.countListAverage(list);
 
         assertEquals(2, result);
+    }
+
+    @Test
+    void compareAverageEmptyListTest() {
+        //проверка, что сравнение среднего значения списков, один из которых пустой, выбрасывает IllegalArgumentException
+        List<Integer> list1 = Arrays.asList(3, 4, 5);
+        List<Integer> list2 = new ArrayList<>();
+
+        ComparatorListAverage comparatorListAverage = new ComparatorListAverage(listAverage);
+
+        assertThrows(IllegalArgumentException.class, ()-> comparatorListAverage.compareListAverage(list1, list2));
+
     }
 
     @Test

@@ -9,9 +9,29 @@
 
 Отчет Checkstyle:
 
-![screenshot_1](https://github.com/bunny-nun/UNIT-TESTS/blob/main/unit-tests-5%20(%D0%9A%D0%BE%D0%B4%20%D1%81%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%D0%B0)/src/seminars/six/Screenshot%201.png)
+![screenshot_1](https://github.com/bunny-nun/UNIT-TESTS/blob/main/unit-tests-5/src/seminars/six/Screenshot_1.png)
 
 Отчет о покрытии кода тестами:
 
-![screenshot_2](https://github.com/bunny-nun/UNIT-TESTS/blob/main/unit-tests-5%20(%D0%9A%D0%BE%D0%B4%20%D1%81%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%D0%B0)/src/seminars/six/Screenshot%202.png)
+![screenshot_2](https://github.com/bunny-nun/UNIT-TESTS/blob/main/unit-tests-5/src/seminars/six/Screenshot_2.png)
 
+![screenshot_3](https://github.com/bunny-nun/UNIT-TESTS/blob/main/unit-tests-5/src/seminars/six/Screenshot_4.png)
+
+![screenshot_4](https://github.com/bunny-nun/UNIT-TESTS/blob/main/unit-tests-5/src/seminars/six/Screenshot_3.png)
+
+Код теста покрывает следующие сценарии:
+
+- проверка, что запуск метода вычисления среднего значения пустого списка выбрасывает ошибку IllegalArgumentException
+- проверка, что запуск метода вычисления среднего значения списка с нулевыми значениями возвращает 0
+- проверка, что запуск метода вычислениями среднего значения списка с одинаковыми значениями возвращает это значение
+- проверка метода вычислениями среднего значения списка с одним элементом
+- проверка метода вычислениями среднего значения списка с положительными элементами
+- проверка метода вычислениями среднего значения списка с отрицательными элементами
+- проверка метода вычисления среднего значения списка с разными элементами
+- проверка, что сравнение среднего значения списков, один из которых пустой, выбрасывает IllegalArgumentException
+- проверка сравнения среднего значения списков, где значение первого списка больше
+- проверка сравнения среднего значения списков, где значение второго списка больше
+- проверка сравнения среднего значения списков с одинаковым средним значением
+
+Представляется, что данных методов достаточно для того, чтобы проверить корректность работы каждого из модулей
+и их корректное взаимодействие между собой. Данные тесты проверяют возможные исключения и корректный расчет результатов.
